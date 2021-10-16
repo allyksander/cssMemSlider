@@ -12,12 +12,22 @@ ul {
     padding: 0 2rem;
 }
 
+.slider {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slider input[type="radio"] {
+    display: none;
+}
+
 .slider-wrap {
     padding: 2rem 0;
     background: #444;
 }
 
 .slider-img {
+    width: 100%;
     display: flex;
     margin-bottom: 2rem;
     border-radius: 2rem;
@@ -32,13 +42,6 @@ ul {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-
-.slider-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .slider-text {
@@ -57,29 +60,28 @@ ul {
 
 .slider-nav {
     display: flex;
-    margin-right: -1rem;
 }
 
-.slider-nav label {
-    padding: 1rem;
-    display: block;
-}
-
-.slider-nav input[type="radio"] {
-    display: none;
-}
-
-.slider-nav input[type="radio"]~.slider-nav__btn {
+.slider-nav__btn {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     background-color: white;
     border: 3px solid white;
     transition: all 0.3s ease-in-out;
+}
+
+.slider-nav label {
+    padding: 1rem;
+    display: block;
     cursor: pointer;
 }
 
-.slider-nav input[type="radio"]:checked~.slider-nav__btn {
+#slide-0:checked~.slider-nav [for="slide-0"] .slider-nav__btn,
+#slide-1:checked~.slider-nav [for="slide-1"] .slider-nav__btn,
+#slide-2:checked~.slider-nav [for="slide-2"] .slider-nav__btn,
+#slide-3:checked~.slider-nav [for="slide-3"] .slider-nav__btn,
+#slide-4:checked~.slider-nav [for="slide-4"] .slider-nav__btn {
     background-color: transparent;
     border-color: orange;
 }
@@ -103,22 +105,21 @@ ul {
     .slider-img {
         margin-bottom: 1rem;
         border-radius: 1rem;
+        order: 1;
     }
 
     .slider-img__slide {
         padding-top: 100%;
     }
 
-    .slider-bar {
-        flex-direction: column-reverse;
+    .slider-nav {
+        margin: 0 auto 1rem;
+        order: 2;
     }
 
     .slider-text {
         width: 100%;
         margin: 0;
-    }
-
-    .slider-nav {
-        margin: 0 auto 1rem;
+        order: 3;
     }
 }
