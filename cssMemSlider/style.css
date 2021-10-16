@@ -29,13 +29,13 @@ ul {
 .slider-img__wrap {
     width: 100%;
     margin-bottom: 2rem;
+    border-radius: 2rem;
     overflow: hidden;
 }
 
 .slider-img {
     width: 100%;
     display: flex;
-    border-radius: 2rem;
     transition: transform .3s ease-in-out;
 }
 
@@ -58,7 +58,7 @@ ul {
 .slider-text {
     width: 100%;
     display: flex;
-    transition: transform .3s ease-in-out;
+    transition: transform .6s ease-in-out;
 }
 
 .slider-text__slide {
@@ -105,11 +105,8 @@ ul {
 
     .slider-img__wrap {
         margin-bottom: 1rem;
-        order: 1;
-    }
-
-    .slider-img {
         border-radius: 1rem;
+        order: 1;
     }
 
     .slider-img__slide {
@@ -132,8 +129,6 @@ ul {
     }
 }
 
-
-
 /* 
 *
 ************************************************************************
@@ -143,7 +138,6 @@ ul {
 ************************************************************************
 *
 */
-
 
 /* 
 ********************
@@ -162,52 +156,31 @@ ul {
 
 /* 
 ********************
-* Slider with images
+* Slider's switching
 ********************
 */
 
-#slide-0:checked~.slider-img__wrap .slider-img {
-    transform: translateX(0%);
-}
-
-#slide-1:checked~.slider-img__wrap .slider-img {
-    transform: translateX(-100%);
-}
-
-#slide-2:checked~.slider-img__wrap .slider-img {
-    transform: translateX(-200%);
-}
-
-#slide-3:checked~.slider-img__wrap .slider-img {
-    transform: translateX(-300%);
-}
-
-#slide-4:checked~.slider-img__wrap .slider-img {
-    transform: translateX(-400%);
-}
-
-/* 
-********************
-* Slider with text
-********************
-*/
-
+#slide-0:checked~.slider-img__wrap .slider-img,
 #slide-0:checked~.slider-text__wrap .slider-text {
     transform: translateX(0%);
 }
 
+#slide-1:checked~.slider-img__wrap .slider-img,
 #slide-1:checked~.slider-text__wrap .slider-text {
     transform: translateX(-100%);
 }
 
+#slide-2:checked~.slider-img__wrap .slider-img,
 #slide-2:checked~.slider-text__wrap .slider-text {
     transform: translateX(-200%);
 }
 
+#slide-3:checked~.slider-img__wrap .slider-img,
 #slide-3:checked~.slider-text__wrap .slider-text {
     transform: translateX(-300%);
 }
 
+#slide-4:checked~.slider-img__wrap .slider-img,
 #slide-4:checked~.slider-text__wrap .slider-text {
     transform: translateX(-400%);
 }
